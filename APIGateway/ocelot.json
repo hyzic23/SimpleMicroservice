@@ -1,0 +1,54 @@
+{
+    "GlobalConfiguration": {},
+    "Routes": [
+      {
+        "DownstreamPathTemplate": "/api/user",
+        "DownstreamScheme": "http",
+        "DownstreamHostAndPorts": [
+          {
+            "Host": "localhost",
+            "Port": "5148"
+          }
+        ],
+        "UpstreamPathTemplate": "/user",
+        "UpstreamHttpMethod": [ "GET", "POST" ]
+      },
+      {
+        "DownstreamPathTemplate": "/api/user/{id}",
+        "DownstreamScheme": "http",
+        "DownstreamHostAndPorts": [
+          {
+            "Host": "localhost",
+            "Port": "5148"
+          }
+        ],
+        "UpstreamPathTemplate": "/user/{id}",
+        "UpstreamHttpMethod": [ "GET", "PUT", "DELETE" ]
+      },
+      {
+        "DownstreamPathTemplate": "/api/Employee/all-employees",
+        "DownstreamScheme": "http",
+        "DownstreamHostAndPorts": [
+          {
+            "Host": "localhost",
+            "Port": "5229"
+          }
+        ],
+        "UpstreamPathTemplate": "/employee",
+        "UpstreamHttpMethod": [ "GET" ]
+      },
+      {
+        "DownstreamPathTemplate": "/api/Employee/add-employee",
+        "DownstreamScheme": "http",
+        "DownstreamHostAndPorts": [
+          {
+            "Host": "localhost",
+            "Port": "5229"
+          }
+        ],
+        "UpstreamPathTemplate": "/employee",
+        "UpstreamHttpMethod": [ "POST" ]
+      }
+
+    ]
+  }

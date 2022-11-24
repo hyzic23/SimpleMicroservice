@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using UserService.Database;
 using UserService.Database.Entities;
 using UserService.IRepository;
@@ -8,7 +9,7 @@ using UserService.IRepository;
 namespace UserService.Controllers
 {
     [Route("api/[controller]")]
-    [ApiController]
+    [ApiController]    
     public class UserController : ControllerBase
     {
         private readonly DatabaseContext dbContext;
@@ -20,6 +21,7 @@ namespace UserService.Controllers
 
         // GET: api/<UserController>
         [HttpGet]
+        //[Authorize]
         public IEnumerable<User> Get()
         {
             return userRepository.GetUsers();
@@ -34,6 +36,7 @@ namespace UserService.Controllers
 
         // POST api/<UserController>
         [HttpPost]
+        [AllowAnonymous]
         public IActionResult Post([FromBody] User request)
         {
             try

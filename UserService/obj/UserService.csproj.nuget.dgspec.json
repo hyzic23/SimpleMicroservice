@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\Isaac Oghenevwapo\\Sandbox\\c#\\SimpleMicroservice\\UserService\\UserService.csproj": {}
+    "C:\\Users\\Isaac Oghenevwapo\\Sandbox\\c#\\SimpleMicroservice\\hyzic23\\SimpleMicroservice\\UserService\\UserService.csproj": {}
   },
   "projects": {
-    "c:\\Users\\Isaac Oghenevwapo\\Sandbox\\c#\\SimpleMicroservice\\UserService\\UserService.csproj": {
+    "C:\\Users\\Isaac Oghenevwapo\\Sandbox\\c#\\SimpleMicroservice\\hyzic23\\SimpleMicroservice\\UserService\\UserService.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\Isaac Oghenevwapo\\Sandbox\\c#\\SimpleMicroservice\\UserService\\UserService.csproj",
+        "projectUniqueName": "C:\\Users\\Isaac Oghenevwapo\\Sandbox\\c#\\SimpleMicroservice\\hyzic23\\SimpleMicroservice\\UserService\\UserService.csproj",
         "projectName": "UserService",
-        "projectPath": "c:\\Users\\Isaac Oghenevwapo\\Sandbox\\c#\\SimpleMicroservice\\UserService\\UserService.csproj",
+        "projectPath": "C:\\Users\\Isaac Oghenevwapo\\Sandbox\\c#\\SimpleMicroservice\\hyzic23\\SimpleMicroservice\\UserService\\UserService.csproj",
         "packagesPath": "C:\\Users\\Isaac Oghenevwapo\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\Isaac Oghenevwapo\\Sandbox\\c#\\SimpleMicroservice\\UserService\\obj\\",
+        "outputPath": "C:\\Users\\Isaac Oghenevwapo\\Sandbox\\c#\\SimpleMicroservice\\hyzic23\\SimpleMicroservice\\UserService\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Isaac Oghenevwapo\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -40,23 +40,31 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "Microsoft.AspNet.WebApi.Cors": {
+              "target": "Package",
+              "version": "[5.2.9, )"
+            },
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[6.0.10, )"
+              "version": "[7.0.0, )"
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
-              "version": "[6.0.10, )"
+              "version": "[7.0.0, )"
             },
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[6.0.10, )"
+              "version": "[7.0.0, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
-              "version": "[6.2.3, )"
+              "version": "[6.4.0, )"
             }
           },
           "imports": [

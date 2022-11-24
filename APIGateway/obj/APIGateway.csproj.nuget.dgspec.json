@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\Isaac Oghenevwapo\\Sandbox\\c#\\SimpleMicroservice\\APIGateway\\APIGateway.csproj": {}
+    "C:\\Users\\Isaac Oghenevwapo\\Sandbox\\c#\\SimpleMicroservice\\hyzic23\\SimpleMicroservice\\APIGateway\\APIGateway.csproj": {}
   },
   "projects": {
-    "c:\\Users\\Isaac Oghenevwapo\\Sandbox\\c#\\SimpleMicroservice\\APIGateway\\APIGateway.csproj": {
+    "C:\\Users\\Isaac Oghenevwapo\\Sandbox\\c#\\SimpleMicroservice\\hyzic23\\SimpleMicroservice\\APIGateway\\APIGateway.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\Isaac Oghenevwapo\\Sandbox\\c#\\SimpleMicroservice\\APIGateway\\APIGateway.csproj",
+        "projectUniqueName": "C:\\Users\\Isaac Oghenevwapo\\Sandbox\\c#\\SimpleMicroservice\\hyzic23\\SimpleMicroservice\\APIGateway\\APIGateway.csproj",
         "projectName": "APIGateway",
-        "projectPath": "c:\\Users\\Isaac Oghenevwapo\\Sandbox\\c#\\SimpleMicroservice\\APIGateway\\APIGateway.csproj",
+        "projectPath": "C:\\Users\\Isaac Oghenevwapo\\Sandbox\\c#\\SimpleMicroservice\\hyzic23\\SimpleMicroservice\\APIGateway\\APIGateway.csproj",
         "packagesPath": "C:\\Users\\Isaac Oghenevwapo\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\Isaac Oghenevwapo\\Sandbox\\c#\\SimpleMicroservice\\APIGateway\\obj\\",
+        "outputPath": "C:\\Users\\Isaac Oghenevwapo\\Sandbox\\c#\\SimpleMicroservice\\hyzic23\\SimpleMicroservice\\APIGateway\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Isaac Oghenevwapo\\AppData\\Roaming\\NuGet\\NuGet.Config",

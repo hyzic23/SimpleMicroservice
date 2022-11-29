@@ -10,6 +10,7 @@ namespace UserService.Database
         }
 
         public DbSet<User> Users { get; set; }
+        public DbSet<AuthUser> AuthUsers { get; set; }
        
     }
 }

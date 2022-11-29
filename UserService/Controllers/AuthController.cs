@@ -1,14 +1,10 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
-using System.Runtime.InteropServices;
-using System.Security.Claims;
 using System.Text;
 using UserService.Database.Entities;
-
-
+using UserService.IRepository;
 
 
 namespace UserService.Controllers
@@ -18,10 +14,13 @@ namespace UserService.Controllers
     public class AuthController : ControllerBase
     {
         private readonly IConfiguration _configuration;
+        private IAuthUserRepository _authUserRepository;
 
-        public AuthController(IConfiguration configuration)
+        public AuthController(IConfiguration configuration, 
+                              IAuthUserRepository authUserRepository)
         {
             _configuration = configuration;
+            _authUserRepository = authUserRepository;
         }
 
         [HttpPost]
@@ -34,7 +33,8 @@ namespace UserService.Controllers
                 return BadRequest();
             }
 
-            AuthUser user = AuthenticateUser(authUser);
+            //AuthUser user = AuthenticateUser(authUser);
+            AuthUser user = _authUserRepository.AuthenticateAuthUser(authUser);
             if (user == null)
                 return BadRequest();
 
@@ -73,6 +73,80 @@ namespace UserService.Controllers
 
             return Unauthorized();
         }
+
+
+        [HttpPost]
+        [Route("authenticate-user")]
+        [AllowAnonymous]
+        public IActionResult AuthenticateAuthUser(AuthUser authUser)
+        {
+            if (authUser == null)
+            {
+                return BadRequest();
+            }
+
+            AuthUser user = _authUserRepository.AuthenticateAuthUser(authUser);
+            if (user == null)
+                return BadRequest();            
+            return Ok(user);
+            //return Unauthorized();
+        }
+
+        [HttpGet]
+        [Route("get-all-authusers")]
+        [AllowAnonymous]
+        public IActionResult GetAllAuthUsers()
+        { 
+            var authUsers = _authUserRepository.GetAuthUsers();
+            if(authUsers is null)
+                return NotFound();  
+            return Ok(authUsers);   
+        }
+
+        [HttpPost]
+        [Route("add-authuser")]
+        [AllowAnonymous]
+        public IActionResult AddAuthUsers(AuthUser authUser)
+        {
+            try
+            {
+                if (authUser == null)
+                {
+                    return BadRequest();
+                }
+                var response = _authUserRepository.AddAuthUser(authUser);
+                return StatusCode(StatusCodes.Status201Created, response);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, ex);
+            }           
+        }
+
+        [HttpGet]
+        [Route("get-authuser/{id}")]
+        [AllowAnonymous]
+        public IActionResult GetAuthUsersById(int id)
+        {           
+                var authUser = _authUserRepository.GetAuthUserById(id);
+                return Ok(authUser);            
+        }
+
+        [HttpPut("update-authuser/{id}")]
+        public IActionResult Put([FromBody] AuthUser request)
+        {
+            var result = _authUserRepository.UpdateAuthUser(request);
+            return StatusCode(StatusCodes.Status200OK, result);
+        }
+
+        
+        [HttpDelete("delete-authuser/{id}")]
+        public bool Delete(int id)
+        {
+            var result = _authUserRepository.DeleteAuthUser(id);
+            return result;
+        }
+
 
 
 

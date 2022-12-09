@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.OData.Query;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Text;
@@ -93,6 +94,7 @@ namespace UserService.Controllers
         }
 
         [HttpGet]
+        [EnableQuery]
         [Route("get-all-authusers")]
         [AllowAnonymous]
         public IActionResult GetAllAuthUsers()

@@ -23,12 +23,18 @@ namespace UserService.Repository
         public AuthUser AuthenticateAuthUser(AuthUser authUser)
         {
             authUser.CreateDate = DateTime.Now;
-            var user = databaseContext
-                        .AuthUsers
-                        .Where(x => x.Username == authUser.Username && x.Password == authUser.Password)
-                        .FirstOrDefault();
-           
-            return user;
+            try
+            {
+                var user = databaseContext
+                       .AuthUsers
+                       .Where(x => x.Username == authUser.Username && x.Password == authUser.Password)
+                       .FirstOrDefault();
+                return user;
+            }
+            catch (Exception)
+            {
+                return null;
+            }                     
         }
 
         public bool DeleteAuthUser(int Id)

@@ -12,3 +12,4 @@ namespace UserService.IRepository
         bool DeleteAuthUser(int Id);
     }
 }
+

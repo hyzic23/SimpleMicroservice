@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.OData;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
@@ -31,6 +32,13 @@ builder.Services.AddAuthentication(options =>
         ValidateIssuerSigningKey = true
     };
 });
+
+//Adding OData
+builder.Services.AddControllers()
+                .AddOData(options => 
+                                    options.Select()
+                                           .Filter()
+                                           .OrderBy());
 
 builder.Services.AddAuthorization();
 builder.Services.AddControllers();
